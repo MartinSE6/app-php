@@ -1,16 +1,17 @@
-
 - name: Creation des utilisateurs
-   - hosts: all
-    become: yes
-    roles:
-     - createuser
-  
+  hosts: all
+  become: yes
+  roles:
+    - createuser
+    
 - name: Installation du serveur web
-   hosts: [ServeursWEB]
-   roles:
+  become_user: app-salaire
+  hosts: [ServeursWEB]
+  roles:
     - SQLWeb
     
 - name: Installation de mariadb
-   hosts: [db]
-   roles:
+  become_user: app-salaire
+  hosts: [db]
+  roles:
     - bdd
