@@ -23,6 +23,7 @@
   copy:
      src: app/
      dest: /var/www/html/
+     
 - name: ensure apache service is start
   service:
      name: httpd
