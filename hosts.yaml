@@ -1,5 +1,9 @@
-[ServeursWEB]
+[all]
 web.martin.form
-[db]
 db.martin.form
 
+[ServeursWEB]
+web.martin.form
+
+[db]
+db.martin.form
