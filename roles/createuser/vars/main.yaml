@@ -1,0 +1,4 @@
+user: 
+  - app-salaire
+group: 
+  - ansible
