@@ -4,28 +4,26 @@
   yum:
      name: "{{ item }}"
      state: present
-   loop:
+  loop:
      "{{ apache_packages }}"
-   when: ansible_facts['os_family'] == "RedHat"
-
- - name: give writable mode to http folder
-   file:
+  when: ansible_facts['os_family'] == "RedHat"
+   
+- name: give writable mode to http folder
+  file:
      path: /var/www/html
      state: directory
      mode: '0755'
-
- - name: Supression du fichier index.html par défaut
-   file:
+     
+- name: Supression du fichier index.html par défaut
+  file:
      path: /var/www/html/index.html
      state: absent
-
- - name: upload web app source
-   copy:
+- name: upload web app source
+  copy:
      src: app/
      dest: /var/www/html/
-
- - name: ensure apache service is start
-   service:
+- name: ensure apache service is start
+  service:
      name: httpd
      state: started
      enabled: yes
