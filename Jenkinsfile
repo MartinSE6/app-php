@@ -3,7 +3,7 @@ node{
         checkout scm
     }
     stage('Ansible') {
-      ansiblePlaybook (
+      ansibl-playbook (
           colorized: true, 
           become: true,             
           playbook: 'playbook.yml',
