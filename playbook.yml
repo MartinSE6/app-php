@@ -6,12 +6,12 @@
    roles:
     - createuser
   
-- name: Installation du serveur web
+ - name: Installation du serveur web
    hosts: [ServeursWEB]
    roles:
     - SQLWeb
     
-- name: Installation de mariadb
-  hosts: [db]
-  roles:
+ - name: Installation de mariadb
+   hosts: [db]
+   roles:
     - bdd
