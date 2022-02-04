@@ -18,6 +18,7 @@
   file:
      path: /var/www/html/index.html
      state: absent
+     
 - name: upload web app source
   copy:
      src: app/
