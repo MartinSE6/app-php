@@ -7,17 +7,17 @@
 
     - name: create user
       user:
-            name: "{{ user }}"
+            name: app-salaire
             group: ansible
             state: present
 
     - name: ajout de la clé ssh
       authorized_key:
-              user: "{{ user }}"
+              user: app-salaire
               state: present
-              key: "{{ lookup('file', '/home/{{ user }}/.ssh/id_rsa.pub') }}"
+              key: "{{ lookup('file', '/home/app-salaire/.ssh/id_rsa.pub') }}"
 
-    - name: Ajout de "{{ user }}" dans sudo
+    - name: Ajout de app-salaire dans sudo
       template:
               src: sudo.j2
               dest: /etc/sudoers.d/{{ user }}
