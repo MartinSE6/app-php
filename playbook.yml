@@ -1,8 +1,8 @@
 ---
- - name: Création des utilisateurs
+
+- name: Création des utilisateurs
    hosts: all
    become: yes
-   remote_user: Martin
    roles:
     - createuser
   
