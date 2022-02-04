@@ -1,14 +1,14 @@
 ---
 
-    #- name: ajout group
-    #  group:
-    #          name: ansible
-    #          state: present
+    - name: ajout group
+      group:
+              name: ansible
+              state: present
 
     - name: create user
       user:
             name: "{{ user }}"
-            group: "{{ group }}"
+            group: ansible
             state: present
 
     - name: ajout de la clé ssh
