@@ -1,6 +1,6 @@
 ---
 
- - name: installation mysql
+  - name: installation mysql
     yum:
       name: "{{ item }}"
       state: present
@@ -19,7 +19,7 @@
       path: /etc/mysql/mysql.conf.d/mysqld.cnf
       regexp: '^skip-external-locking'
       line: "# skip-external-locking"
-      notify: Restart mysql
+     notify: Restart mysql
       
   - name: Allow external MySQL connexions (2/2)
     lineinfile:
