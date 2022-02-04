@@ -1,9 +1,9 @@
 
 - name: Creation des utilisateurs
-   hosts: all
-   become: yes
-   roles:
-    - createuser
+   - hosts: all
+    become: yes
+    roles:
+     - createuser
   
 - name: Installation du serveur web
    hosts: [ServeursWEB]
