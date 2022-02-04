@@ -1,6 +1,6 @@
 node{
     stage('Clone') {
-        git 'https://github.com/MartinSE6/app-salaire.git'
+        checkout scm
     }
     stage('Ansible') {
       ansiblePlaybook (
